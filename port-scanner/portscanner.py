@@ -6,7 +6,7 @@ def scan(ip):
 	print(f"[*] Scanning the target {ip} ")
 	converted_ip = convert_ip(ip)
 
-	for port in range(75,85):
+	for port in range(1,1000):
 		port_scan(converted_ip, port)
 
 def convert_ip(ip):
@@ -23,7 +23,7 @@ def port_scan(ipadress, port):
 		s.connect((ipadress, port))
 		print(colored(f"[+] The port {port} is open.", 'green'))
 	except:
-		print(colored(f"[-] The port {port} is closed",'red'))
+		pass
 
 targets = input("[+] Enter the target/s to scan (seperate multiple targets by ,): ")
 

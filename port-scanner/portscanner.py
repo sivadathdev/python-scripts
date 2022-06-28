@@ -33,10 +33,12 @@ def port_scan(ipadress, port):
 	except:
 		pass
 
-targets = input("[+] Enter the target/s to scan (seperate multiple targets by ,): ")
+if __name__ == "__main__":
+	
+	targets = input("[+] Enter the target/s to scan (seperate multiple targets by ,): ")
 
-if "," in targets:
-	for ip_addr in targets.split(","):
-		scan(ip_addr.strip())
-else:
-	scan(targets)
+	if "," in targets:
+		for ip_addr in targets.split(","):
+			scan(ip_addr.strip())
+	else:
+		scan(targets)
